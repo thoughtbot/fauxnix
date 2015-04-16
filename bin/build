@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Building Fuaxnix"
-browserify -t babelify -r babel/polyfill fauxnix.js -o dist/fauxnix.js
+browserify -t babelify fauxnix.js -o dist/fauxnix.js
 
 echo "Building Fuaxnix standalone"
 browserify -s Fauxnix -t babelify fauxnix.js -o dist/fauxnix-standalone.js
