@@ -1,0 +1,28 @@
+{
+  "name": "fauxnix",
+  "main": "fauxnix.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/thoughtbot/fauxnix",
+  "authors": [
+    "thoughtbot (http://thoughtbot.com)"
+  ],
+  "description": "A fake websocket connection for Phoenix channels",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "phoenix",
+    "channels",
+    "fauxnix",
+    "websockets"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ]
+}

@@ -2,17 +2,26 @@
   "name": "fauxnix",
   "version": "0.0.1",
   "description": "A fake websocket connection for Phoenix channels",
-  "main": "index.js",
+  "main": "fauxnix.js",
+  "files": [
+    "fauxnix.js"
+  ],
   "scripts": {
     "build": "./bin/build",
     "test": "testem"
   },
   "keywords": [
+    "fauxnix",
     "phoenix",
     "websocket",
     "channels"
   ],
-  "author": "Blake Williams",
+  "bugs": "https://github.com/thoughtbot/fauxnix/issues",
+  "repository": "thoughtbot/fauxnix",
+  "author": {
+    "name": "thoughtbot",
+    "url": "http://thoughtbot.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "babelify": "^6.0.2",
