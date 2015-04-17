@@ -18,8 +18,8 @@ var Fauxnix = (function () {
     _classCallCheck(this, Fauxnix);
 
     this.replies = [];
-    events.apply(this);
     this.onopen = function () {};
+    events.apply(this);
 
     setTimeout(function () {
       _this.readyState = 1;
