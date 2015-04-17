@@ -16,8 +16,8 @@ returned object of `new WebSocket()` calls with the socket you passed in.
 
 ```javascript
 const socket = new Fauxnix(function() {
-  this.receive("topic", "event", function() {
-    return { status: "ok", response: { id: 1 } };
+  this.receive("topic", "event", function(payload) {
+    return { status: "ok", response: { id: payload.id } };
   });
 });
 
@@ -26,7 +26,8 @@ Fauxnix.inject(socket);
 
 Whenever `socket` receives a message from `phoenix.js` with a topic of
 `"topic"` and an event of `"event"` Fauxnix will send a reply with the given
-`status` and `response` in the return statement.
+`status` and `response` in the return statement. The `payload` from a message is
+passed in as the first argument to `this.receive`s callback.
 
 The call to `Fauxnix.inject` replaces the returned object of all `new
 WebSocket()` calls with the `socket` we defined.

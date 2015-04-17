@@ -63,3 +63,21 @@ QUnit.test("Fauxnix replaces Websocket instances with given object", function(as
   Fauxnix.inject(otherSocket);
   assert.equal(new WebSocket(), otherSocket);
 });
+
+QUnit.asyncTest("Fauxnix receive callbacks are passed in the payload", function(assert) {
+  expect(1);
+
+  const message = { topic: "foo", event: "bar", payload: { id: 1 }, ref: 1 };
+
+  const socket = new Fauxnix(function() {
+    this.receive("foo", "bar", function(payload) {
+      assert.deepEqual(payload, message.payload);
+      start();
+
+      return { status: "ok", response: [] };
+    });
+  });
+  socket.onmessage = function() {};
+
+  socket.send(JSON.stringify(message));
+});

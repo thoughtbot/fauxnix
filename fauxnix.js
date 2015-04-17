@@ -39,7 +39,7 @@ class Fauxnix {
   }
 
   _buildResponse(message, reply) {
-    const payload = reply.callback();
+    const payload = reply.callback(message.payload);
     return {
       topic: message.topic,
       event: "phx_reply",
