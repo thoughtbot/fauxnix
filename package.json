@@ -2,7 +2,7 @@
   "name": "fauxnix",
   "version": "0.0.1",
   "description": "A fake websocket connection for Phoenix channels",
-  "main": "fauxnix.js",
+  "main": "dist/cjs/fauxnix.js",
   "files": [
     "fauxnix.js"
   ],
@@ -24,6 +24,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "babel": "^5.1.10",
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
     "qunitjs": "^1.18.0",

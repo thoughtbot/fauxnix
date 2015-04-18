@@ -1,2 +1,4 @@
-import Fauxnix from "../fauxnix";
+import "babel/polyfill";
+
+import "../fauxnix";
 import "./fauxnix-test";

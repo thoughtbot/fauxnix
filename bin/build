@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-echo "Building Fuaxnix"
-browserify -t babelify fauxnix.js -o dist/fauxnix.js
+mkdir -p dist/{amd,named-amd,cjs,globals}
 
-echo "Building Fuaxnix standalone"
-browserify -s Fauxnix -t babelify fauxnix.js -o dist/fauxnix-standalone.js
+echo "Building Fuaxnix - amd"
+babel -m amd fauxnix.js -o dist/amd/fauxnix.js
+
+echo "Building Fuaxnix - named amd"
+babel -m amd -M fauxnix.js -o dist/named-amd/fauxnix.js
+
+echo "Building Fuaxnix - commonjs"
+babel -m common -M fauxnix.js -o dist/cjs/fauxnix.js
+
+echo "Building Fuaxnix - globals"
+babel -m ignore fauxnix.js -o dist/globals/fauxnix.js

@@ -1,5 +1,3 @@
-import "babelify/polyfill";
-
 class Fauxnix {
   constructor(events) {
     this.replies = [];
