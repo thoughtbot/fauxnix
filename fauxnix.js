@@ -21,7 +21,10 @@ class Fauxnix {
     if (reply) {
       const response = this._buildResponse(message, reply);
       const stringResponse = JSON.stringify(response);
-      this.onmessage({ data: stringResponse });
+
+      setTimeout(() => {
+        this.onmessage({ data: stringResponse });
+      }, 10);
     } else {
       console.warn(`Unhandled message: ${rawMessage}`);
     }

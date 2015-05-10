@@ -29,13 +29,20 @@ define("fauxnix", ["exports", "module"], function (exports, module) {
     }, {
       key: "send",
       value: function send(rawMessage) {
+        var _this2 = this;
+
         var message = JSON.parse(rawMessage);
         var reply = this._findReplyFor(message);
 
         if (reply) {
-          var response = this._buildResponse(message, reply);
-          var stringResponse = JSON.stringify(response);
-          this.onmessage({ data: stringResponse });
+          (function () {
+            var response = _this2._buildResponse(message, reply);
+            var stringResponse = JSON.stringify(response);
+
+            setTimeout(function () {
+              _this2.onmessage({ data: stringResponse });
+            }, 10);
+          })();
         } else {
           console.warn("Unhandled message: " + rawMessage);
         }
