@@ -47,9 +47,8 @@ class Fauxnix {
       payload: {
         status: payload.status,
         response: payload.response || {},
-        ref: message.ref
       },
-      ref: null,
+      ref: message.ref,
     };
   }
 }

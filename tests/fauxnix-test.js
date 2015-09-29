@@ -12,7 +12,7 @@ QUnit.asyncTest("Fauxnix calls onopen", function(assert) {
 });
 
 QUnit.asyncTest("Fauxnix replies with valid response", function(assert) {
-  expect(6);
+  expect(5);
 
   const socket = new Fauxnix(function() {
     this.receive("foo", "bar", function() {
@@ -26,8 +26,7 @@ QUnit.asyncTest("Fauxnix replies with valid response", function(assert) {
     assert.equal(message.event, "phx_reply");
     assert.equal(message.payload.status, "ok");
     assert.deepEqual(message.payload.response, { id: 1 });
-    assert.equal(message.payload.ref, 1);
-    assert.equal(message.ref, null);
+    assert.equal(message.ref, 1);
 
     start();
   };
